@@ -1,0 +1,221 @@
+/* 基本样式 */
+body {
+    background-image: url('https://p1.music.126.net/u_x0J_eDNnStgCfYb6O5gQ==/109951168528499207.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Logo 样式 */
+.logo {
+    width: 50px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题的间距调整 */
+h1 {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(147, 112, 219, 0.8);
+    font-weight: 600;
+}
+
+/* 自定义样式的下拉框 */
+.custom-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 改变下拉框焦点时的样式 */
+.custom-select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #4169e1, #1e90ff);
+    border: none;
+    box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    border: none;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 结果文本样式 */
+#resultText {
+    font-size: 24px;
+    background: linear-gradient(45deg, #4169e1, #1e90ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+/* 音乐播放器样式 */
+.music-player {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    transform: scale(0.8);  /* 缩小显示 */
+    transform-origin: bottom left;  /* 缩放基准点 */
+    width: 330px;
+    height: 86px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* 右下角引脚样式 */
+.footer-note {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* 确保引脚在页面最上层 */
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+    .logo {
+        width: 40px; /* 小屏设备上缩小 Logo */
+    }
+
+    h1 {
+        font-size: 20px; /* 调整标题大小 */
+    }
+
+    .custom-select {
+        font-size: 14px;
+    }
+}
+
+/* 美化表单容器 */
+.bg-light {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bg-light:hover {
+    transform: translateY(-5px);
+}
+
+/* 美化输入框 */
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: #4169e1;
+    box-shadow: 0 0 0 0.2rem rgba(65, 105, 225, 0.25);
+}
+
+/* 美化结果卡片 */
+#result {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* 添加输入验证提示样式 */
+.input-error {
+    border-color: #dc3545;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* 添加加载动画 */
+.loading {
+    position: relative;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 添加页面整体的暗色叠加，使内容更突出 */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: -1;
+}
